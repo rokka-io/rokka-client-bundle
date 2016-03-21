@@ -1,0 +1,13 @@
+services:
+    rokka.client.factory:
+        class: Rokka\Client\Factory
+
+    rokka.client.image:
+        class: Rokka\Client\Image
+        factory: ['@rokka.client.factory', getImageClient]
+        arguments: ['%rokka_client.organization%', '%rokka_client.api_key%', '%rokka_client.api_secret%', '%rokka_client.base_url%']
+
+    rokka.client.user:
+        class: Rokka\Client\User
+        factory: ['@rokka.client.factory', getUserClient]
+        arguments: ['%rokka_client.base_url%']
