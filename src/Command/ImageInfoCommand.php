@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\VarDumper\Cloner\VarCloner;
+use Symfony\Component\VarDumper\Dumper\CliDumper;
 
 class ImageInfoCommand extends ContainerAwareCommand
 {
@@ -20,7 +22,10 @@ class ImageInfoCommand extends ContainerAwareCommand
     {
         $client = $this->getContainer()->get('rokka.client.image');
 
-        var_dump($client->getSourceImage($input->getArgument('id')));
+        $cloner = new VarCloner();
+        $dumper = new CliDumper();
+
+        $dumper->dump($cloner->cloneVar($client->getSourceImage($input->getArgument('id'))));
     }
 
 

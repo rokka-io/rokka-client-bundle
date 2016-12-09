@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\VarDumper\Cloner\VarCloner;
+use Symfony\Component\VarDumper\Dumper\CliDumper;
 
 class UserInfoCommand extends ContainerAwareCommand
 {
@@ -22,7 +24,10 @@ class UserInfoCommand extends ContainerAwareCommand
         $key = $this->getContainer()->getParameter('rokka_client.api_key');
         $secret = $this->getContainer()->getParameter('rokka_client.api_secret');
         $user->setCredentials($key, $secret);
-        var_dump($user->getOrganization($input->getArgument('name')));
+
+        $cloner = new VarCloner();
+        $dumper = new CliDumper();
+        $dumper->dump($cloner->cloneVar($user->getOrganization($input->getArgument('name'))));
     }
 
 }
