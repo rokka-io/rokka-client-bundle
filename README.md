@@ -1,5 +1,8 @@
 # Rokka Symfony Bundle
 
+[![StyleCI](https://styleci.io/repos/54386957/shield)](https://styleci.io/repos/54386957)
+[![Latest Stable Version](https://poser.pugx.org/rokka/client-bundle/version.png)](https://packagist.org/packages/rokka/client-bundle)
+
 A [Symfony](http://symfony.com/) bundle for the [Rokka](https://rokka.io/) image service.
 
 ## Installation
