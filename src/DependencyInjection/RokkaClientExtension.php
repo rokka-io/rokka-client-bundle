@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * Class RokkaClientExtension
+ * Class RokkaClientExtension.
  */
 class RokkaClientExtension extends Extension
 {
@@ -24,7 +24,7 @@ class RokkaClientExtension extends Extension
     {
         $loader = new YamlFileLoader(
             $container,
-            new FileLocator(__DIR__ . '/../Resources/config')
+            new FileLocator(__DIR__.'/../Resources/config')
         );
 
         $configuration = new Configuration();
@@ -33,7 +33,7 @@ class RokkaClientExtension extends Extension
 
         // Parameters
         foreach ($config as $name => $value) {
-            $container->setParameter('rokka_client.' . $name, $value);
+            $container->setParameter('rokka_client.'.$name, $value);
         }
 
         // Service definitions
