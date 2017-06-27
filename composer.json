@@ -31,7 +31,7 @@
     },
     "require": {
         "php": ">=5.5",
-        "rokka/client": "^0.4",
+        "rokka/client": "^0.7",
         "symfony/framework-bundle": "^2.3|^3.0"
     },
     "require-dev": {
@@ -43,7 +43,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.2.x-dev"
+            "dev-master": "0.3.x-dev"
         }
     }
 }
