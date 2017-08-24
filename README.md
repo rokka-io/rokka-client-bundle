@@ -41,7 +41,10 @@ base_url is to override the API location. We use this for testing mainly, so no 
 ## Usage
 
 The bundle will create two services for you, `rokka.client.image` and `rokka.client.user`. These give you access to the
-basic functionality from the [rokka/client](https://gitlab.liip.ch/rokka/rokka-client-php) library, pre-configured with
+basic functionality from the [rokka/client](https://github.com/rokka-io/rokka-client-php) library, pre-configured with
 your credentials.
 
-See the [official documentation](https://rokka.io/documentation) on how to use the calls.
+This bundle also provides console commands to interact with rokka.io. If you only want a CLI for rokka, you can also 
+install the [rokka PHP CLI tool](https://github.com/rokka-io/rokka-client-php-cli) as stand-alone phar.
+
+See the [official documentation](https://rokka.io/documentation) for further information on how to use rokka.
