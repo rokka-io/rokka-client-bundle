@@ -5,7 +5,7 @@ namespace Rokka\RokkaClientBundle\DependencyInjection;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
-use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 /**
  * Class RokkaClientExtension.
@@ -22,9 +22,14 @@ class RokkaClientExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader(
+        $reflection = new \ReflectionClass('\RokkaCli\ConsoleApplication');
+
+        $loader = new XmlFileLoader(
             $container,
-            new FileLocator(__DIR__.'/../Resources/config')
+            new FileLocator([
+                __DIR__.'/../Resources/config',
+                dirname($reflection->getFileName()).'/config',
+            ])
         );
 
         $configuration = new Configuration();
@@ -36,7 +41,19 @@ class RokkaClientExtension extends Extension
             $container->setParameter('rokka_client.'.$name, $value);
         }
 
-        // Service definitions
-        $loader->load('rokka.yml');
+        $loader->load('rokka.xml');
+
+        // load commands from cli
+        $loader->load('commands.xml');
+        if ($config['organization']) {
+            $loader->load('restricted_commands.xml');
+        }
+        // set the command name prefix argument for rokka commands
+        // we need to loop over all services of this bundle, if we use findTaggedServiceIds, things explode later inside Symfony.
+        foreach ($container->getDefinitions() as $name => $definition) {
+            if (!$definition->isAbstract() && 0 === strpos($name, 'rokka.command.')) {
+                $definition->addArgument('rokka:');
+            }
+        }
     }
 }
