@@ -31,6 +31,15 @@ class Configuration implements ConfigurationInterface
                     ->info('Base URL of API, mainly used for testing.')
                     ->defaultValue('https://api.rokka.io')
                 ->end()
+                ->arrayNode('web_path_resolver')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('root_dir')
+                            ->info('Root directory where the twig filters look for images')
+                            ->defaultValue('%kernel.project_dir%/public/')
+                        ->end()
+                    ->end()
+                ->end()
             ->end();
 
         $secretNode = $rootNode->children()->scalarNode('api_secret')

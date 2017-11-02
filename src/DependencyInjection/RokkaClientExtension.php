@@ -28,6 +28,10 @@ class RokkaClientExtension extends Extension
 
         // Parameters
         foreach ($config as $name => $value) {
+            if ('web_path_resolver' === $name) {
+                $name = 'web_path_resolver.root_dir';
+                $value = $value['root_dir'];
+            }
             $container->setParameter('rokka_client.'.$name, $value);
         }
 
