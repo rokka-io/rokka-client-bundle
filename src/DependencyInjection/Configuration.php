@@ -29,7 +29,7 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->scalarNode('api_secret')
                     ->info('Api-secret value from user registration.')
-                    ->isRequired()
+                    ->defaultNull()
                 ->end()
                 ->scalarNode('organization')
                     ->info('Organization value like "my-org" for use in calls to the API.')
