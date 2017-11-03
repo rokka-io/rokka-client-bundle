@@ -28,8 +28,16 @@
         <service id="rokka.twig.extension" class="Rokka\Twig\Extension\RokkaExtension">
             <argument>%rokka_client.organization%</argument>
             <argument>%rokka_client.api_key%</argument>
-            <argument>%kernel.root_dir%/../web/</argument>
+            <argument>null</argument>
+            <argument>null</argument>
+            <argument type="service" id="rokka.twig.resolver.webpath"/>
             <tag name="twig.extension"/>
         </service>
+
+        <service id="rokka.twig.resolver.webpath" class="Rokka\Twig\Resolver\WebPathResolver">
+            <argument>%kernel.root_dir%/../web/</argument>
+        </service>
+
+
     </services>
 </container>
