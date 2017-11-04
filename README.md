@@ -65,3 +65,15 @@ This bundle also provides console commands to interact with rokka.io. If you onl
 install the [rokka PHP CLI tool](https://github.com/rokka-io/rokka-client-php-cli) as stand-alone phar.
 
 See the [official documentation](https://rokka.io/documentation) for further information on how to use rokka.
+
+## Twig
+
+The rokka twig extension is automatically included. For the available functions see the [README of that package](https://github.com/rokka-io/rokka-client-php-twig).
+
+## Moving from imagine
+
+If you use imagine and want to switch to rokka, create a rokka stack for each imagine filter you have.
+And then replace  `imagine_filter` with `rokka_stack_url` in your twig templates (maybe also state the format, if you don't want jpg).
+
+If you're images are not stored on the file system, then it needs some more adjustments. See also the twig extension for info about that.
+
