@@ -9,12 +9,6 @@
         "images",
         "imagemanipulation"
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/rokka-io/rokka-client-php-twig"
-        }
-    ],
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
@@ -39,7 +33,8 @@
         "php": "^7.1 || ^8.0",
         "rokka/client": "^1.10",
         "rokka/client-cli": "^1.8",
-        "symfony/framework-bundle": "^3.4.26 || ^4.3 || ^5.0"
+        "symfony/framework-bundle": "^3.4.26 || ^4.3 || ^5.0",
+        "rokka/twig": "dev-develop as 0.0.2-dev",
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.0",
