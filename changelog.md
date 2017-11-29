@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 ### Security
 
+## [1.0.1] - 2017-11-29
+### Fixed
+- Fixed wrong argument in configuration dependency injection.
 
 ## [1.0.0] - 2017-11-04
 
