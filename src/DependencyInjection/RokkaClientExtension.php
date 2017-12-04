@@ -51,8 +51,14 @@ class RokkaClientExtension extends Extension
         // set the command name prefix argument for rokka commands
         // we need to loop over all services of this bundle, if we use findTaggedServiceIds, things explode later inside Symfony.
         foreach ($container->getDefinitions() as $name => $definition) {
-            if (!$definition->isAbstract() && 0 === strpos($name, 'rokka.command.')) {
+            if (!$definition->isAbstract() && $definition->hasTag('symfony.command.')) {
                 $definition->addArgument('rokka:');
+                $tagAttributes = $definition->getTag('symfony.command');
+                if (array_key_exists('command', $tagAttributes)) {
+                    $definition->clearTag('symfony.command');
+                    $tagAttributes['command'] = 'rokka:'.$tagAttributes['command'];
+                    $definition->addTag('symfony.command', $tagAttributes);
+                }
             }
         }
     }
