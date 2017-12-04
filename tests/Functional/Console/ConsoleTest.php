@@ -23,6 +23,6 @@ class ConsoleTest extends KernelTestCase
 
         // do not fix the number of commands to be flexible when new commands get added
         // the point of this test is to see that commands are loaded and show up in the console
-        $this->assertTrue(substr_count($output->fetch(), '  rokka:') > 20);
+        $this->assertTrue(substr_count($output->fetch(), '  rokka:') > 20, $output->fetch());
     }
 }
