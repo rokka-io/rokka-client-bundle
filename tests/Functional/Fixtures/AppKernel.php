@@ -5,6 +5,9 @@ namespace Rokka\RokkaClientBundle\Tests\Functional\Fixtures;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
 
+/* BC to run tests on Symfony < 3.3 */
+class_alias(AppKernel::class, '\AppKernel');
+
 class AppKernel extends Kernel
 {
     public function registerBundles()
