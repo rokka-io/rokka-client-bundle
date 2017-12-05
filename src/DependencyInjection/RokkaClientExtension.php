@@ -7,7 +7,6 @@ use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Component\HttpKernel\Kernel;
 
 /**
  * Class RokkaClientExtension.
@@ -60,7 +59,7 @@ class RokkaClientExtension extends Extension
                         // when we drop support for Symfony < 3.4, we can drop the interface check and the else clause
                         // and remove the command name from the command classes to only have them in the tag
                         $definition->clearTag('console.command');
-                        $tagAttributes['command'] = 'rokka:' . $tagAttributes['command'];
+                        $tagAttributes['command'] = 'rokka:'.$tagAttributes['command'];
                         $definition->addTag('console.command', $tagAttributes);
                     } else {
                         $definition->addArgument('rokka:');
