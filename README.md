@@ -24,12 +24,11 @@ Configure the bundle with the parameters below.
 
 ## Configuration
 
-Enter your key, secret and organization strings.
+Enter your api key and organization strings.
 
 ```
 rokka_client:
     api_key: 'key-here'
-    api_secret: 'secret-here'
     organization: 'my-organization'
     
     # Optional, not needed for most users

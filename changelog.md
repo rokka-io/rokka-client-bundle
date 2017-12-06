@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Symfony 4 support
 ### Changed
-- Made api_secret optional, since it's not used anymore.
+- Made api_secret optional in configuration, since it's not used anymore.
 
 ## [1.0.1] - 2017-11-29
 ### Fixed

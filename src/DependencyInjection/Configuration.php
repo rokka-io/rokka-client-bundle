@@ -28,7 +28,7 @@ class Configuration implements ConfigurationInterface
                     ->isRequired()
                 ->end()
                 ->scalarNode('api_secret')
-                    ->info('Api-secret value from user registration.')
+                    ->info('Deprecated. This is not used anymore.')
                     ->defaultNull()
                 ->end()
                 ->scalarNode('organization')
