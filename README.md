@@ -5,7 +5,7 @@
 
 A [Symfony](http://symfony.com/) bundle for the [Rokka](https://rokka.io/) image service.
 
-## Installation
+## Installation Symfony version <= 3
 
 Require the bundle using composer:
 
@@ -21,6 +21,20 @@ Add it to `app/AppKernel.php`
 ```
 
 Configure the bundle with the parameters below.
+
+## Installation Symfony version >= 4
+
+The rokka Symfony bundle comes with a flex recipe. 
+
+Do the following.
+
+```
+composer config extra.symfony.allow-contrib true
+composer require rokka/client-bundle
+```
+
+Then you can add your api key and organization to the `.env` file
+or edit `config/packages/rokka.yaml`.
 
 ## Configuration
 

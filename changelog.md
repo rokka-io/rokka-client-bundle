@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.1.0] - 2017-12-08
 ### Added
-- Symfony 4 support
+- Symfony 4 support, including a flex recipe for easy installation.
 ### Changed
 - Made api_secret optional in configuration, since it's not used anymore.
 - Dropped Symfony 3.0 and 3.1 support (Symfony 2 LTS still supported)
