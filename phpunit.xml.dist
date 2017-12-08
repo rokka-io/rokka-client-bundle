@@ -26,6 +26,7 @@
     </filter>
 
     <php>
-        <server name="KERNEL_DIR" value="./tests/Functional/Fixtures/app" />
+        <server name="KERNEL_DIR" value="./tests/Functional/Fixtures" />
+        <server name="KERNEL_CLASS" value="Rokka\RokkaClientBundle\Tests\Functional\Fixtures\AppKernel" />
     </php>
 </phpunit>

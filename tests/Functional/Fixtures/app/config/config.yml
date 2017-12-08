@@ -4,5 +4,4 @@ framework:
 
 rokka_client:
     api_key: 'key-here'
-    api_secret: 'secret-here'
     organization: 'test-organization'

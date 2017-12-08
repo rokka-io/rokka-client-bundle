@@ -4,13 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/rokka-io/rokka-client-php-cli/compare/1.0.0...develop)
+## [Unreleased](https://github.com/rokka-io/rokka-client-php-cli/compare/1.1.0...develop)
 ### Added
 ### Changed
 ### Deprecated
 ### Fixed
 ### Removed
 ### Security
+
+## [1.1.0] - 2017-12-08
+### Added
+- Symfony 4 support
+### Changed
+- Made api_secret optional in configuration, since it's not used anymore.
+- Dropped Symfony 3.0 and 3.1 support (Symfony 2 LTS still supported)
 
 ## [1.0.1] - 2017-11-29
 ### Fixed

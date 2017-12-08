@@ -5,8 +5,8 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
 
-        <service id="rokka.client.factory" class="Rokka\Client\Factory"/>
-        <service id="Rokka\Client\Factory" alias="rokka.client.factory"/>
+        <service id="rokka.client.factory" class="Rokka\Client\Factory" public="true"/>
+        <service id="Rokka\Client\Factory" alias="rokka.client.factory" public="false"/>
 
         <service id="rokka.configuration" class="RokkaCli\Configuration" public="false">
             <argument>%rokka_client.base_url%</argument>
@@ -15,16 +15,16 @@
             <argument>%rokka_client.organization%</argument>
         </service>
 
-        <service id="rokka.client.image" class="Rokka\Client\Image">
+        <service id="rokka.client.image" class="Rokka\Client\Image" public="true">
             <!-- the client provider service is defined in the rokka cli library service definitions -->
             <factory service="rokka.provider.client" method="getImageClient"/>
         </service>
         <service id="Rokka\Client\Image" alias="rokka.client.image" public="false"/>
 
-        <service id="rokka.client.user" class="Rokka\Client\User">
+        <service id="rokka.client.user" class="Rokka\Client\User" public="true">
             <factory service="rokka.provider.client" method="getUserClient"/>
         </service>
-        <service id="Rokka\Client\User" alias="rokka.client.user"/>
+        <service id="Rokka\Client\User" alias="rokka.client.user" public="false"/>
 
     </services>
 </container>
