@@ -4,12 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/rokka-io/rokka-client-php-cli/compare/1.1.0...develop)
+## [Unreleased](https://github.com/rokka-io/rokka-client-php-cli/compare/1.1.0...master)
 ### Added
 ### Changed
 ### Deprecated
 ### Fixed
 ### Removed
+- Don't include apiSecret anymore in instantiating underlying libraries.
 ### Security
 
 ## [1.1.0] - 2017-12-08
