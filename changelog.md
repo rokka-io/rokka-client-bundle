@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 ### Security
 
-## [1.2.0] - 2018-04-23
+## [1.1.1] - 2018-04-23
 ### Changed
 - Updated dependencies on the other rokka libraries
 ### Removed
