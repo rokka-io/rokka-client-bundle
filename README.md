@@ -70,10 +70,10 @@ See the [official documentation](https://rokka.io/documentation) for further inf
 
 The rokka twig extension is automatically included. For the available functions see the [README of that package](https://github.com/rokka-io/rokka-client-php-twig).
 
-## Moving from imagine
+## Moving from LiipImagineBundle
 
 If you use imagine and want to switch to rokka, create a rokka stack for each imagine filter you have.
 And then replace  `imagine_filter` with `rokka_stack_url` in your twig templates (maybe also state the format, if you don't want jpg).
 
-If you're images are not stored on the file system, then it needs some more adjustments. See also the twig extension for info about that.
+If your images are not stored on the file system, then you need to do some further adjustments.  The twig extension readme explains how to load images from other sources.
 
