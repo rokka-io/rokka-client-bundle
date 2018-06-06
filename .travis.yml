@@ -46,8 +46,6 @@ matrix:
       env:
         - DEPENDENCIES="dunglas/symfony-lock:^3"
         - COMPOSER_FLAGS="--prefer-stable --prefer-lowest"
-    - php: hhvm
-      dist: trusty
 
 before_install:
   - if [[ $COVERAGE != true ]]; then phpenv config-rm xdebug.ini || true; fi
