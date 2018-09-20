@@ -18,7 +18,7 @@ class RokkaClientExtension extends Extension
             $container,
             new FileLocator([
                 __DIR__.'/../Resources/config',
-                dirname($reflection->getFileName()).'/config',
+                \dirname($reflection->getFileName()).'/config',
             ])
         );
 
