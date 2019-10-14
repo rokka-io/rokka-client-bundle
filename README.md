@@ -5,6 +5,10 @@
 
 A [Symfony](http://symfony.com/) bundle for the [Rokka](https://rokka.io/) image service.
 
+[rokka](https://rokka.io) is digital image processing done right. Store, render and deliver images. Easy and blazingly fast. This bundle allows to upload and manage your image files to rokka and deliver them in the right format, as light and as fast as possible. And you only pay what you use, no upfront and fixed costs.
+
+Free account plans are available. Just install the plugin, register and use it.
+
 ## Installation Symfony version <= 3
 
 Require the bundle using composer:
