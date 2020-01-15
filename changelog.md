@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 ### Removed
 ### Security
+- Updated dependencies (rokka/client, symfony/framework-bundle)
+- Dropped support for SF 2.x
+- Dropped support for PHP 5.6
 
 ## [1.1.1] - 2018-04-23
 ### Changed
