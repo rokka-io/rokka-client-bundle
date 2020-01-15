@@ -37,7 +37,7 @@
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.0",
-        "symfony/phpunit-bridge": "^3.3"
+        "symfony/phpunit-bridge": "^5.0"
     },
     "extra": {
         "branch-alias": {
