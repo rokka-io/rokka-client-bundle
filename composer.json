@@ -30,10 +30,10 @@
         "psr-4": { "Rokka\\RokkaClientBundle\\Tests\\": "tests" }
     },
     "require": {
-        "php": "^5.6 || ^7.0",
-        "rokka/client": "^1.6.0",
-        "rokka/client-cli": "^1.6.1",
-        "symfony/framework-bundle": "^2.7 || ^3.2.2 || ^4.0"
+        "php": "^7.0",
+        "rokka/client": "^1.10",
+        "rokka/client-cli": "^1.8",
+        "symfony/framework-bundle": "^3.4.26 || ^4.2"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.0",
