@@ -31,19 +31,25 @@ matrix:
     - php: 7.2
       env: COVERAGE=true PHPUNIT_FLAGS="-v --coverage-text"
 
-    # Install all SF components in the same major version, see https://github.com/dunglas/symfony-lock
-    # Latest SF 3.x
+    # Testing with SF 4.4 (current and minimum supported version)
     - php: 7.2
-      env: DEPENDENCIES="dunglas/symfony-lock:^3"
-    # Minimum supported SF 3.x
+      env: SYMFONY_REQUIRE=4.4.*
     - php: 7.2
       env:
-        - DEPENDENCIES="dunglas/symfony-lock:^3"
+        - SYMFONY_REQUIRE=4.4.*
+        - COMPOSER_FLAGS="--prefer-stable --prefer-lowest"
+
+    # Testing with SF 3.4 (current and minimum supported version)
+    - php: 7.2
+      env: SYMFONY_REQUIRE=3.4.*
+    - php: 7.2
+      env:
+        - SYMFONY_REQUIRE=3.4.*
         - COMPOSER_FLAGS="--prefer-stable --prefer-lowest"
 
 before_install:
   - if [[ $COVERAGE != true ]]; then phpenv config-rm xdebug.ini || true; fi
-  - if ! [ -v "$DEPENDENCIES" ]; then composer require --no-update ${DEPENDENCIES}; fi;
+  - composer global require --no-progress --no-scripts --no-plugins symfony/flex
 
 install:
   # To be removed when this issue will be resolved: https://github.com/composer/composer/issues/5355
