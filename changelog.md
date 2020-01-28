@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased](https://github.com/rokka-io/rokka-client-bundle/compare/1.1.2...master)
 ### Added
 ### Changed
-- Added support for Symfony 5
 ### Deprecated
 ### Fixed
 ### Removed
+### Security
+
+## [1.2.0](https://github.com/rokka-io/rokka-client-bundle/releases/tag/1.2.0) - 2020-01-28
+### Changed
+- Added support for Symfony 5
 ### Security
 - Updated dependencies (rokka/client, symfony/framework-bundle)
 - Dropped support for Symfony 2.x
