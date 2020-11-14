@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 ### Security
 
+## [1.2.1](https://github.com/rokka-io/rokka-client-bundle/releases/tag/1.2.1) - 2020-11-15
+
+- Added support for PHP 8, removed support for PHP 7.0 
+
 ## [1.2.0](https://github.com/rokka-io/rokka-client-bundle/releases/tag/1.2.0) - 2020-01-28
 ### Changed
 - Added support for Symfony 5
