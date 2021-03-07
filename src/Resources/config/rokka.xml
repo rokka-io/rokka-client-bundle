@@ -36,7 +36,7 @@
         </service>
 
         <service id="rokka.twig.resolver.webpath" class="Rokka\Twig\Resolver\WebPathResolver">
-            <argument>%kernel.root_dir%/../web/</argument>
+            <argument>%rokka_client.web_path_resolver.root_dir%</argument>
         </service>
 
 

@@ -68,7 +68,15 @@ See the [official documentation](https://rokka.io/documentation) for further inf
 
 ## Twig
 
-The rokka twig extension is automatically included. For the available functions see the [README of that package](https://github.com/rokka-io/rokka-client-php-twig).
+The rokka twig extension is automatically included. Image paths are by default assumed to be relative to the `public` directory of the Symfony application. You can configure a different image root path with:
+
+```
+rokka_client:
+    web_path_resolver:
+        root_dir: "%kernel.project_dir%/path/to/images"
+```
+
+For further customization and documentation of how to use the provided twig filters and functions, see the [README of that package](https://github.com/rokka-io/rokka-client-php-twig).
 
 ## Moving from LiipImagineBundle
 
