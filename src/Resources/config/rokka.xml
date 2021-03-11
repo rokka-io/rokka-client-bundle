@@ -25,5 +25,20 @@
         </service>
         <service id="Rokka\Client\User" alias="rokka.client.user" public="false"/>
 
+        <service id="rokka.twig.extension" class="Rokka\Twig\Extension\RokkaExtension">
+            <argument>%rokka_client.organization%</argument>
+            <argument>%rokka_client.api_key%</argument>
+            <argument>null</argument>
+            <argument>null</argument>
+            <argument type="service" id="rokka.twig.resolver.webpath"/>
+            <argument>%rokka_client.base_url%</argument>
+            <tag name="twig.extension"/>
+        </service>
+
+        <service id="rokka.twig.resolver.webpath" class="Rokka\Twig\Resolver\WebPathResolver">
+            <argument>%rokka_client.web_path_resolver.root_dir%</argument>
+        </service>
+
+
     </services>
 </container>

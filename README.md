@@ -65,3 +65,34 @@ This bundle also provides console commands to interact with rokka.io. If you onl
 install the [rokka PHP CLI tool](https://github.com/rokka-io/rokka-client-php-cli) as stand-alone phar.
 
 See the [official documentation](https://rokka.io/documentation) for further information on how to use rokka.
+
+## Twig
+
+The rokka twig extension is automatically included. It provides a couple of twig filters and functions to build rokka
+image URLs in twig templates. Some filters even allow to upload images on the fly:
+
+    {{ '/path/to/image' | rokka_stack_url('preview', seo='my-seo-image-url-fragment', seoLanguage = 'fr') }}
+    
+    {{ rokka_generate_url(my_rokka_hash, 'preview', seo='my-image-url-fragement') }}
+
+The [README of the rokka twig package](https://github.com/rokka-io/rokka-client-php-twig) documents how to use the filters.
+
+Image paths are by default assumed to be relative to the `public` directory of the Symfony application. You can
+configure a different image root path with:
+
+```
+rokka_client:
+    web_path_resolver:
+        root_dir: "%kernel.project_dir%/path/to/images"
+```
+
+See the [README of the rokka twig package](https://github.com/rokka-io/rokka-client-php-twig) for further customization
+options. To use those options, you will need to overwrite services of this bundle.
+
+## Moving from LiipImagineBundle
+
+If you use imagine and want to switch to rokka, create a rokka stack for each imagine filter you have.
+And then replace  `imagine_filter` with `rokka_stack_url` in your twig templates (maybe also state the format, if you don't want jpg).
+
+If your images are not stored on the file system, then you need to do some further adjustments.  The twig extension readme explains how to load images from other sources.
+
