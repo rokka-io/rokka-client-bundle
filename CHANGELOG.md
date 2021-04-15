@@ -1,8 +1,16 @@
-# Change Log
-
+# Changelog
 All notable changes to this project will be documented in this file.
 
-This project aims to follow [Semantic Versioning](http://semver.org/).
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [Unreleased](https://github.com/rokka-io/rokka-client-bundle/compare/1.1.2...master)
+### Added
+### Changed
+### Deprecated
+### Fixed
+### Removed
+### Security
 
 ## 1.3.0 - 2021-03-11
 
