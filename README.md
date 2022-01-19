@@ -8,24 +8,7 @@ A [Symfony](http://symfony.com/) bundle for the [Rokka](https://rokka.io/) image
 
 Free account plans are available. Just install the plugin, register and use it.
 
-## Installation Symfony version <= 3
-
-Require the bundle using composer:
-
-`composer require rokka/client-bundle`
-
-Add it to `app/AppKernel.php`
-
-```
-        $bundles = array(
-            ...
-            new Rokka\RokkaClientBundle\RokkaClientBundle(),
-        );
-```
-
-Configure the bundle with the parameters below.
-
-## Installation Symfony version >= 4
+## Installation 
 
 The rokka Symfony bundle comes with a flex recipe. 
 
