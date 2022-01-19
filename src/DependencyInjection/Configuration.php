@@ -47,7 +47,7 @@ class Configuration implements ConfigurationInterface
             ->defaultNull();
 
         if (method_exists($secretNode, 'setDeprecated')) {
-            $secretNode->setDeprecated();
+            $secretNode->setDeprecated('rokka/client-bundle', '1.1.0', 'This is not used anymore');
         }
 
         return $treeBuilder;
