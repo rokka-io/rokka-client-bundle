@@ -32,17 +32,17 @@
     "require": {
         "php": "^7.1 || ^8.0",
         "rokka/client": "^1.10",
-        "rokka/client-cli": "^1.8",
-        "symfony/framework-bundle": "^5.0 || ^6.0",
+        "rokka/client-cli": "^1.9",
+        "symfony/framework-bundle": "^5.2 || ^6.0",
         "rokka/twig": "^1.0"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^2.0",
-        "symfony/phpunit-bridge": "^5.0 || ^6.0"
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "symfony/phpunit-bridge": "^5.2 || ^6.0"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.2.x-dev"
+            "dev-master": "1.3.x-dev"
         }
     }
 }

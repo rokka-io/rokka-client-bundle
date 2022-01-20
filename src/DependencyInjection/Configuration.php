@@ -10,12 +10,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder('rokka_client');
-        if (method_exists($treeBuilder, 'getRootNode')) {
-            $rootNode = $treeBuilder->getRootNode();
-        } else {
-            // symfony < 4.2 support
-            $rootNode = $treeBuilder->root('rokka_client');
-        }
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()
