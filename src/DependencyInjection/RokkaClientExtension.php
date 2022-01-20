@@ -16,7 +16,7 @@ class RokkaClientExtension extends Extension
         $filename = $reflection->getFileName();
 
         if (false === $filename) {
-            throw new \RuntimeException('No filename for reflection found');
+            throw new \RuntimeException('Could not determine the configuration folder for the CLI tools');
         }
         $loader = new XmlFileLoader(
             $container,
