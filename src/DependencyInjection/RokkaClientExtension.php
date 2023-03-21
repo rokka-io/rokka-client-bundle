@@ -2,6 +2,7 @@
 
 namespace Rokka\RokkaClientBundle\DependencyInjection;
 
+use RokkaCli\ConsoleApplication;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -12,7 +13,7 @@ class RokkaClientExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
-        $reflection = new \ReflectionClass('\RokkaCli\ConsoleApplication');
+        $reflection = new \ReflectionClass(ConsoleApplication::class);
         $filename = $reflection->getFileName();
 
         if (false === $filename) {
