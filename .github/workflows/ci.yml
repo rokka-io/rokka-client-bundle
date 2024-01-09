@@ -35,6 +35,9 @@ jobs:
           - php: '8.2'
             env:
               SYMFONY_REQUIRE: "*"
+          - php: '8.3'
+            env:
+              SYMFONY_REQUIRE: "*"
           - php: '7.2'
             env:
               COMPOSER_FLAGS: "--prefer-lowest"
