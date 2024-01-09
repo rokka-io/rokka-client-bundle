@@ -7,15 +7,10 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('rokka_client');
-        if (method_exists($treeBuilder, 'getRootNode')) {
-            $rootNode = $treeBuilder->getRootNode();
-        } else {
-            // symfony < 4.2 support
-            $rootNode = $treeBuilder->root('rokka_client');
-        }
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()
@@ -47,7 +42,7 @@ class Configuration implements ConfigurationInterface
             ->defaultNull();
 
         if (method_exists($secretNode, 'setDeprecated')) {
-            $secretNode->setDeprecated();
+            $secretNode->setDeprecated('rokka/client-bundle', '1.1.0', 'This is not used anymore');
         }
 
         return $treeBuilder;

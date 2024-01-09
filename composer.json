@@ -30,19 +30,14 @@
         "psr-4": { "Rokka\\RokkaClientBundle\\Tests\\": "tests" }
     },
     "require": {
-        "php": "^7.1 || ^8.0",
+        "php": "^7.2 || ^8.0",
         "rokka/client": "^1.10",
-        "rokka/client-cli": "^1.8",
-        "symfony/framework-bundle": "^3.4.26 || ^4.3 || ^5.0 || ^6.0 || ^7.0",
+        "rokka/client-cli": "^1.9",
+        "symfony/framework-bundle": "^5.2 || ^6.0 || ^7.0",
         "rokka/twig": "^1.0"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^2.0",
-        "symfony/phpunit-bridge": "^5.0"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.2.x-dev"
-        }
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "symfony/phpunit-bridge": "^5.2 || ^6.0"
     }
 }

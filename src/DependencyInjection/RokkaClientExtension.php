@@ -2,6 +2,7 @@
 
 namespace Rokka\RokkaClientBundle\DependencyInjection;
 
+use RokkaCli\ConsoleApplication;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Console\CommandLoader\CommandLoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -10,15 +11,19 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 class RokkaClientExtension extends Extension
 {
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
-        $reflection = new \ReflectionClass('\RokkaCli\ConsoleApplication');
+        $reflection = new \ReflectionClass(ConsoleApplication::class);
+        $filename = $reflection->getFileName();
 
+        if (false === $filename) {
+            throw new \RuntimeException('Could not determine the configuration folder for the CLI tools');
+        }
         $loader = new XmlFileLoader(
             $container,
             new FileLocator([
                 __DIR__.'/../Resources/config',
-                \dirname($reflection->getFileName()).'/config',
+                \dirname($filename).'/config',
             ])
         );
 
@@ -47,7 +52,7 @@ class RokkaClientExtension extends Extension
         foreach ($container->getDefinitions() as $name => $definition) {
             if (0 === strpos($name, 'rokka.command.') && $definition->hasTag('console.command')) {
                 $tagAttributes = $definition->getTag('console.command')[0];
-                if (array_key_exists('command', $tagAttributes)) {
+                if (\array_key_exists('command', $tagAttributes)) {
                     if (interface_exists(CommandLoaderInterface::class)) { // since symfony 3.4
                         // when we drop support for Symfony < 3.4, we can drop the interface check and the else clause
                         // and remove the command name from the command classes to only have them in the tag
