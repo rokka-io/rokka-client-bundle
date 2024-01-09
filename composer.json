@@ -33,7 +33,7 @@
         "php": "^7.1 || ^8.0",
         "rokka/client": "^1.10",
         "rokka/client-cli": "^1.8",
-        "symfony/framework-bundle": "^3.4.26 || ^4.3 || ^5.0 || ^6.0",
+        "symfony/framework-bundle": "^3.4.26 || ^4.3 || ^5.0 || ^6.0 || ^7.0",
         "rokka/twig": "^1.0"
     },
     "require-dev": {
