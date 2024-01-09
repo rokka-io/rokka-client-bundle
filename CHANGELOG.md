@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 ### Security
 
+## 1.4.1 - 2024-01-09
+
+### Added
+- Allow installation with Symfony 7
+- Test with PHP 8.3
+
 ## 1.4.0 - 2023-03-27
 
 ### Fixed
